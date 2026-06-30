@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="PB Sumber Maju – Club Badminton Jombang. Membangun Atlet Berprestasi, Berkarakter, dan Sportif."/>
+  <title>PB Sumber Maju – Club Badminton Jombang</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+
+  <!-- CSS Kita Sendiri -->
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+  <!-- ================================================
+       LOADING SCREEN
+  ================================================= -->
+  <div id="loading-screen">
+    <div class="loader-spinner"></div>
+    <p>PB SUMBER MAJU</p>
+  </div>
+
+  <!-- ================================================
+       BACK TO TOP
+  ================================================= -->
+  <button id="back-to-top" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- ================================================
+       LIGHTBOX GALERI
+  ================================================= -->
+  <div id="lightbox" role="dialog" aria-modal="true">
+    <div id="lightbox-content">
+      <button id="lightbox-close" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+      <div id="lb-photo-wrap">
+        <img id="lb-photo" src="" alt="" class="lb-photo-img"/>
+        <h6 id="lb-photo-title" class="mt-3 mb-1"></h6>
+        <p id="lb-photo-desc" class="text-white-50 small mb-0"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       NAVBAR
+  ================================================= -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <a class="navbar-brand d-flex align-items-center" href="#hero">
+    </a>
+    <div class="container">
+      <a class="navbar-brand" href="#hero">
+        PB <span>Sumber Maju</span>
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#jadwal">Jadwal Latihan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pelatih">Pelatih</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+          <li class="nav-item"><a class="nav-link" href="#daftar">Daftar Atlet</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       HERO
+  ================================================= -->
+  <section id="hero">
+    <div class="hero-deco"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center min-vh-100">
+
+        <!-- Teks Hero -->
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="hero-badge">🏸 Club Badminton Jombang</div>
+          <h1 class="hero-title">PB <span>Sumber</span><br>Maju</h1>
+          <p class="hero-slogan">
+            Membangun Atlet Berprestasi, Berkarakter, dan Sportif
+          </p>
+          <div class="hero-buttons">
+            <a href="#daftar" class="btn-primary-custom">
+              <i class="bi bi-person-plus-fill"></i> Daftar Sekarang
+            </a>
+            <a href="#galeri" class="btn-accent-custom">
+              <i class="bi bi-images"></i> Lihat Galeri
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num" data-counter="6" data-suffix="+">0</div>
+              <div class="hero-stat-label">TAHUN BERDIRI</div>
+            </div>
+            <div>
+              <div class="hero-stat-num" data-counter="25" data-suffix="+">0</div>
+              <div class="hero-stat-label">AKTIF</div>
+            </div>
+            <div>
+              <div class="hero-stat-num" data-counter="3">0</div>
+              <div class="hero-stat-label">KELOMPOK LATIHAN</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dekorasi kanan -->
+        <div class="col-lg-5 text-center d-none d-lg-block" data-aos="fade-left" data-aos-delay="200">
+          <img src="images/Logo sumber Maju new 1.png"
+                alt="Logo PB Sumber Maju"
+                class="hero-logo">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       POSTER PENDAFTARAN
+  ================================================= -->
+  <section id="poster" class="py-5">
+    <div class="container">
+      <div class="poster-box" data-aos="zoom-in">
+        <div class="row align-items-center">
+          <div class="col-md-8 text-md-start text-center">
+            <h3>🏸 BUKA PENDAFTARAN ATLET BARU!</h3>
+            <p class="mb-3">
+              Bergabunglah dengan PB Sumber Maju dan raih prestasi badminton terbaikmu
+              bersama pelatih berpengalaman.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWs8SOwyUXKoaR5pS-ZDAhO6jZV7mWId4xs3ZjpGkfcglSSg/viewform?usp=publish-editor"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-daftar-hero">
+              <i class="bi bi-arrow-right-circle-fill"></i> Daftar Sekarang
+            </a>
+          </div>
+          <div class="col-md-4 text-center d-none d-md-block">
+            <div style="font-size:6rem;">🏆</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       TENTANG CLUB
+  ================================================= -->
+  <section id="tentang">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title">Tentang <span>Club</span></h2>
+        <p class="section-sub">
+          Mengenal lebih dekat PB Sumber Maju, club badminton kebanggaan Jombang.
+        </p>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="about-card">
+            <div class="about-icon"><i class="bi bi-calendar-check"></i></div>
+            <div class="about-num">2021</div>
+            <div class="fw-semibold">Tahun Berdiri</div>
+            <p class="text-muted small mt-1">
+              Berdiri dan berkembang di Jombang selama kurang lebih dari 6 tahun.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="about-card">
+            <div class="about-icon"><i class="bi bi-people-fill"></i></div>
+            <div class="about-num">25+</div>
+            <div class="fw-semibold">Atlet Aktif</div>
+            <p class="text-muted small mt-1">
+              Atlet dari kelompok pemula, beginner, hingga senior.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="about-card">
+            <div class="about-icon"><i class="bi bi-trophy-fill"></i></div>
+            <div class="about-num">3</div>
+            <div class="fw-semibold">Kelompok Latihan</div>
+            <p class="text-muted small mt-1">
+              Pemula, Beginner, dan Senior dengan program terstruktur.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="about-card">
+            <div class="about-icon"><i class="bi bi-geo-alt-fill"></i></div>
+            <div class="about-num">GOR</div>
+            <div class="fw-semibold">Sumber Maju</div>
+            <p class="text-muted small mt-1">
+              Berlokasi di Bedahlawak, Tembelang, Kabupaten Jombang.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       VISI & MISI
+  ================================================= -->
+  <section id="visimisi">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title" style="color:#fff">Visi & <span>Misi</span></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.5)">
+          Komitmen kami dalam membangun badminton yang berprestasi dan berkarakter.
+        </p>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-md-5" data-aos="fade-right">
+          <div class="vm-card visi">
+            <div class="vm-label"><i class="bi bi-eye me-1"></i>Visi</div>
+            <h4>
+              Menjadi club badminton terbaik di Jombang yang melahirkan
+              atlet berprestasi nasional
+            </h4>
+          </div>
+        </div>
+
+        <div class="col-md-7" data-aos="fade-left">
+          <div class="vm-card misi">
+            <div class="vm-label"><i class="bi bi-bullseye me-1"></i>Misi</div>
+            <div class="vm-misi-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Mengembangkan potensi atlet melalui pembinaan terarah dan terprogram.</span>
+            </div>
+            <div class="vm-misi-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Mengutamakan sportivitas dan kerja sama tim dalam setiap kegiatan.</span>
+            </div>
+            <div class="vm-misi-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Membangun komunitas badminton yang solid, inklusif, dan profesional.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       JADWAL LATIHAN
+  ================================================= -->
+  <section id="jadwal">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title">Jadwal <span>Latihan</span></h2>
+        <p class="section-sub">
+          Jadwal latihan disesuaikan dengan kelompok kemampuan atlet.
+        </p>
+      </div>
+
+      <div class="row g-4 mb-5">
+
+        <!-- Pemula -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="schedule-card">
+            <div class="schedule-header pemula">
+              <div class="badge-level">KELOMPOK</div>
+              <div class="h5 mb-0">🔵 Pemula</div>
+            </div>
+            <div class="schedule-body">
+              <div class="schedule-item">
+                <span class="day">Selasa</span>
+                <span class="time">15.00 – 19.00 WIB</span>
+              </div>
+              <div class="schedule-item">
+                <span class="day">Sabtu</span>
+                <span class="time">14.00 – 17.00 WIB</span>
+              </div>
+              <div class="schedule-item">
+                <span class="day">Minggu</span>
+                <span class="time">14.00 – 17.00 WIB</span>
+              </div>
+            </div>
+            <div class="schedule-footer">
+              <i class="bi bi-clock me-1"></i> 3× seminggu
+            </div>
+          </div>
+        </div>
+
+        <!-- Beginner -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="schedule-card">
+            <div class="schedule-header beginner">
+              <div class="badge-level">KELOMPOK</div>
+              <div class="h5 mb-0">🟡 Beginner</div>
+            </div>
+            <div class="schedule-body">
+              <div class="schedule-item">
+                <span class="day">Selasa / Kamis *</span>
+                <span class="time">15.00 – 19.00 WIB</span>
+              </div>
+              <div class="schedule-item">
+                <span class="day">Sabtu</span>
+                <span class="time">14.00 – 19.00 WIB</span>
+              </div>
+              <div class="schedule-item">
+                <span class="day">Minggu</span>
+                <span class="time">14.00 – 19.00 WIB</span>
+              </div>
+            </div>
+            <div class="schedule-footer">
+              <i class="bi bi-info-circle me-1"></i>
+              *Pembagian hari tergantung keputusan pelatih dan kemampuan atlet
+            </div>
+          </div>
+        </div>
+
+        <!-- Senior -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="schedule-card">
+            <div class="schedule-header senior">
+              <div class="badge-level">KELOMPOK</div>
+              <div class="h5 mb-0">⚫ Senior</div>
+            </div>
+            <div class="schedule-body">
+              <div class="schedule-item">
+                <span class="day">Kamis</span>
+                <span class="time">15.00 – 17.00 WIB</span>
+              </div>
+              <div class="schedule-item">
+                <span class="day">Sabtu</span>
+                <span class="time">14.00 – 17.00 WIB</span>
+              </div>
+              <div class="schedule-item">
+                <span class="day">Minggu</span>
+                <span class="time">14.00 – 17.00 WIB</span>
+              </div>
+            </div>
+            <div class="schedule-footer">
+              <i class="bi bi-clock me-1"></i> 3× seminggu
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row jadwal -->
+
+      <!-- Program Latihan -->
+      <div class="row" data-aos="fade-up">
+        <div class="col-lg-8 mx-auto">
+          <div class="program-box">
+            <h5><i class="bi bi-lightning-charge-fill me-2"></i>Program Latihan</h5>
+            <div class="program-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>
+                Latihan fisik bersama dilakukan setiap <strong>1 bulan sekali</strong> secara kolektif.
+              </span>
+            </div>
+            <div class="program-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>
+                Program fisik mandiri di rumah menggunakan <strong>kartu fisik bulanan</strong>
+                yang diberikan pelatih.
+              </span>
+            </div>
+            <div class="program-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>
+                Latihan teknik, taktik, dan mental dilakukan sesuai jadwal kelompok masing-masing.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       PELATIH
+  ================================================= -->
+  <section id="pelatih">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title">Tim <span>Pelatih</span></h2>
+        <p class="section-sub">
+          Dibimbing oleh pelatih berpengalaman untuk mengoptimalkan potensi setiap atlet.
+        </p>
+      </div>
+
+      <!-- Kelompok Pemula -->
+      <div class="mb-5" data-aos="fade-up">
+        <div class="coach-group-label">🔵 Kelompok Pemula</div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="0">
+            <div class="coach-card">
+              <div class="coach-avatar">D</div>
+              <div class="coach-role"><i class="bi bi-patch-check-fill me-1"></i>Pelatih Utama</div>
+              <h6>Danur</h6>
+              <p class="coach-exp"><i class="bi bi-clock me-1"></i>±8 tahun pengalaman melatih badminton</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="coach-card">
+              <div class="coach-avatar">C</div>
+              <div class="coach-role">Asisten Pelatih</div>
+              <h6>Candra</h6>
+              <p class="coach-exp"><i class="bi bi-clock me-1"></i>±3 tahun pengalaman melatih badminton</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kelompok Beginner -->
+      <div class="mb-5" data-aos="fade-up">
+        <div class="coach-group-label">🟡 Kelompok Beginner</div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="0">
+            <div class="coach-card">
+              <div class="coach-avatar">A</div>
+              <div class="coach-role"><i class="bi bi-patch-check-fill me-1"></i>Pelatih Utama</div>
+              <h6>Amira</h6>
+              <p class="coach-exp"><i class="bi bi-clock me-1"></i>±5 tahun pengalaman melatih badminton</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="coach-card">
+              <div class="coach-avatar">P</div>
+              <div class="coach-role">Asisten Pelatih</div>
+              <h6>Putri</h6>
+              <p class="coach-exp"><i class="bi bi-clock me-1"></i>±3 tahun pengalaman melatih badminton</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kelompok Senior -->
+      <div data-aos="fade-up">
+        <div class="coach-group-label">⚫ Kelompok Senior</div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="0">
+            <div class="coach-card">
+              <div class="coach-avatar">N</div>
+              <div class="coach-role"><i class="bi bi-patch-check-fill me-1"></i>Pelatih Utama</div>
+              <h6>Nasrul</h6>
+              <p class="coach-exp"><i class="bi bi-clock me-1"></i>±5 tahun pengalaman melatih badminton</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="coach-card">
+              <div class="coach-avatar">Z</div>
+              <div class="coach-role">Asisten Pelatih</div>
+              <h6>Zidan</h6>
+              <p class="coach-exp"><i class="bi bi-clock me-1"></i>±3 tahun pengalaman melatih badminton</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       GALERI
+  ================================================= -->
+  <section id="galeri">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title" style="color:#fff">Galeri <span>Kegiatan</span></h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.5)">
+          Momen-momen terbaik PB Sumber Maju dalam berbagai kegiatan dan sparring.
+        </p>
+      </div>
+
+      <!-- Grid Foto -->
+      <div class="gallery-grid mb-5" data-aos="fade-up">
+
+        <div class="gallery-item"
+              data-img="images/gambarsumbermajuvsafandaijaya.jpg"
+              data-title="PB Sumber Maju VS PB Afandi Jaya"
+              data-desc="Sparring . GOR Sumber Maju, Jombang">
+          <img src="images/gambarsumbermajuvsafandaijaya.jpg"
+                alt="Fun Match PB Sumber Maju vs PB Afandi Jaya"
+                class="gallery-img"/>
+          <div class="gallery-overlay">
+            <i class="bi bi-zoom-in"></i>
+            <p>Fun Match</p>
+          </div>
+          <div class="gallery-caption">
+            <span>⚔️ VS PB Afandi Jaya</span>
+          </div>
+        </div>
+
+        <div class="gallery-item"
+              data-img="images/gambar sumber maju vs new kampret.jpg"
+              data-title="PB Sumber Maju VS PB New Kampret"
+              data-desc="Sparring . GOR New Kampret, Gresik, Driyorejo">
+            <img src="images/gambar sumber maju vs new kampret.jpg"
+                  alt="Fun Match PB Sumber Maju VS PB New Kampret"
+                  class="gallery-img"/>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in"></i>
+              <p>Fun Match</p>
+            </div>
+            <div class="gallery-caption">
+              <span>⚔️ PB New Kampret</span>
+            </div>
+        </div>
+
+        <div class="gallery-item"
+             data-img="images/gambar sumber maju vs satelit nusantara.jpg"
+             data-title="PB Sumber Maju VS PB Satelit Nusantara"
+             data-desc="Sparring . GOR Sumber Maju, Jombang">
+            <img src="images/gambar sumber maju vs satelit nusantara.jpg"
+                  alt="Fun Match PB Sumber Maju VS PB Satelit Nusantara"
+                  class="gallery-img"/>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in"></i>
+              <p>Fun Match</p>
+            </div>
+            <div class="gallery-caption">
+              <span>⚔️ VS PB Satelit Nusantara</span>
+            </div>
+        </div>
+
+        <div class="gallery-item"
+              data-img="images/gambar sumber maju vs tunas sikatan.jpg"
+              data-title="PB Sumber Maju VS PB Tunas Sikatan"
+              data-desc="Sparring . GOR Sumber Maju, Jombang">
+            <img src="images/gambar sumber maju vs tunas sikatan.jpg"
+                  alt="Fun Match PB Sumber Maju VS PB Tunas Sikatan"
+                  class="gallery-img"/>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in"></i>
+              <p>Fun Match</p>
+            </div>
+            <div class="gallery-caption">
+              <span>⚔️ VS PB Tunas Sikatan</span>
+            </div>
+        </div>
+
+        <div class="gallery-item"
+              data-img="images/gambar sumber maju vs kadung tangkas.jpeg"
+              data-title="PB Sumber Maju VS PB Kedung tangkas"
+              data-desc="Sparring . GOR Kaedung Tangkas, Bojonegoro">
+            <img src="images/gambar sumber maju vs kadung tangkas.jpeg"
+                  alt="Fun Match PB Sumber Maju VS PB Kedung Tangkas"
+                  class="gallery-img"/>
+            <div class="gallery-overlay">
+              <i class="bi bi-zoom-in"></i>
+              <p>Fun Match</p>
+            </div>
+            <div class="gallery-caption">
+              <span>⚔️ VS PB Kedung Tangkas</span>
+            </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+
+    </div>
+  </section>
+
+  <!-- ================================================
+       DAFTAR ATLET BARU
+  ================================================= -->
+  <section id="daftar">
+    <div class="container">
+      <div class="daftar-box" data-aos="zoom-in">
+        <div class="daftar-icon">
+          <i class="bi bi-person-plus-fill"></i>
+        </div>
+        <h2>Pendaftaran Atlet Baru</h2>
+        <p>
+          Silakan isi formulir pendaftaran melalui tombol berikut.<br>
+          Terbuka untuk semua usia dan semua level kemampuan.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWs8SOwyUXKoaR5pS-ZDAhO6jZV7mWId4xs3ZjpGkfcglSSg/viewform?usp=publish-editor"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-daftar-big">
+          <i class="bi bi-arrow-right-circle-fill"></i> Daftar Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       KONTAK & LOKASI
+  ================================================= -->
+  <section id="kontak">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <h2 class="section-title">Hubungi <span>Kami</span></h2>
+        <p class="section-sub">
+          Temukan kami di GOR Sumber Maju atau hubungi melalui media sosial.
+        </p>
+      </div>
+      <div class="row g-4 align-items-start">
+
+        <!-- Maps -->
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="map-embed">
+            <iframe
+              src="https://maps.google.com/maps?q=Desa+Bedahlawak+Tembelang+Jombang&output=embed"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Lokasi GOR Sumber Maju">
+            </iframe>
+          </div>
+          <div class="mt-3 text-center">
+            <a href="https://maps.app.goo.gl/xexobJonp7jm2FA66"
+               target="_blank" rel="noopener noreferrer"
+               class="btn-primary-custom">
+              <i class="bi bi-map-fill"></i> Buka di Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Info Kontak -->
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="contact-card">
+
+            <a href="https://wa.me/6285943730983"
+               target="_blank" rel="noopener noreferrer"
+               class="contact-item">
+              <div class="contact-icon ci-wa"><i class="bi bi-whatsapp"></i></div>
+              <div class="contact-text">
+                <small>WhatsApp</small>
+                <strong>0859-4373-0983</strong>
+              </div>
+            </a>
+
+            <a href="https://www.instagram.com/pbsumbermaju_official"
+               target="_blank" rel="noopener noreferrer"
+               class="contact-item">
+              <div class="contact-icon ci-ig"><i class="bi bi-instagram"></i></div>
+              <div class="contact-text">
+                <small>Instagram</small>
+                <strong>@pbsumbermaju_official</strong>
+              </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@pbsumbermaju_official"
+               target="_blank" rel="noopener noreferrer"
+               class="contact-item">
+              <div class="contact-icon ci-tt"><i class="bi bi-tiktok"></i></div>
+              <div class="contact-text">
+                <small>TikTok</small>
+                <strong>@pbsumbermaju_official</strong>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon ci-loc"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="contact-text">
+                <small>Alamat</small>
+                <strong>Desa Bedahlawak, Kec. Tembelang, Kab. Jombang</strong>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       FOOTER
+  ================================================= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-brand">PB <span>Sumber Maju</span></div>
+      <p>© 2026 PB Sumber Maju – Club Badminton Jombang. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================================================
+       SCRIPTS
+  ================================================= -->
+  <!-- Bootstrap Bundle (termasuk Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Script kita sendiri -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

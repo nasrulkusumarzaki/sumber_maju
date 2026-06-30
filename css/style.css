@@ -1,0 +1,748 @@
+/* =============================================
+   PB SUMBER MAJU – style.css
+   Club Badminton Jombang
+   ============================================= */
+
+/* ============ CSS VARIABLES ============ */
+:root {
+  --primary:    #1A3A6B;
+  --accent:     #E8A020;
+  --dark:       #0D1B34;
+  --light:      #F4F7FC;
+  --white:      #FFFFFF;
+  --gray:       #6B7A99;
+  --radius:     12px;
+  --transition: .35s ease;
+}
+
+/* ============ RESET & BASE ============ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--white);
+  color: #1e293b;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+a { text-decoration: none; }
+
+/* ============ TYPOGRAPHY ============ */
+.section-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.8rem;
+  color: var(--primary);
+  letter-spacing: 2px;
+}
+.section-title span { color: var(--accent); }
+.section-sub {
+  color: var(--gray);
+  font-size: .95rem;
+  max-width: 560px;
+  margin: .4rem auto 0;
+}
+
+/* ============ BUTTONS ============ */
+.btn-primary-custom {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  padding: .65rem 1.8rem;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+.btn-primary-custom:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+.btn-accent-custom {
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 50px;
+  padding: .65rem 1.8rem;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  cursor: pointer;
+}
+.btn-accent-custom:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+/* ============ SECTION PADDING ============ */
+section { padding: 90px 0; }
+
+/* ============ LOADING SCREEN ============ */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+#loading-screen.hidden { opacity: 0; visibility: hidden; }
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid rgba(255, 255, 255, .15);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+#loading-screen p {
+  color: var(--accent);
+  margin-top: 1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: .85rem;
+}
+
+/* ============ BACK TO TOP ============ */
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: var(--accent);
+  color: var(--dark);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  z-index: 900;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
+  border: none;
+}
+#back-to-top.show { opacity: 1; visibility: visible; }
+#back-to-top:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* ============ NAVBAR ============ */
+#mainNavbar {
+  background: rgba(13, 27, 52, .97) !important;
+  backdrop-filter: blur(10px);
+  padding: .5rem 0;
+  transition: var(--transition);
+}
+#mainNavbar .navbar-brand {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--white) !important;
+  padding: 0;
+}
+#mainNavbar .navbar-brand span { color: var(--accent); }
+
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, .8) !important;
+  font-weight: 500;
+  font-size: .88rem;
+  padding: .4rem .8rem !important;
+  transition: var(--transition);
+  border-radius: 6px;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--accent) !important;
+  background: rgba(255, 255, 255, .05);
+}
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, .3);
+  padding: .3rem .6rem;
+}
+.navbar-toggler-icon { filter: invert(1); }
+
+/* Menu mobile saat expand */
+.navbar-collapse.show,
+.navbar-collapse.collapsing {
+  background: rgba(9, 20, 42, .98);
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: .5rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: .5rem 0 .8rem;
+}
+.navbar-collapse.show .nav-link,
+.navbar-collapse.collapsing .nav-link {
+  padding: .6rem 1.4rem !important;
+  margin: .1rem .5rem;
+}
+
+/* ============ HERO ============ */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 60%, #0a2a56 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-deco {
+  position: absolute;
+  top: 20%;
+  right: 8%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 160, 32, .12);
+  animation: pulse-ring 4s ease infinite;
+  pointer-events: none;
+}
+.hero-deco::before {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 160, 32, .08);
+}
+@keyframes pulse-ring {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.04); }
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(232, 160, 32, .2);
+  color: var(--accent);
+  border: 1px solid rgba(232, 160, 32, .4);
+  border-radius: 50px;
+  padding: .3rem 1rem;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+.hero-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: var(--white);
+  line-height: 1;
+  letter-spacing: 3px;
+}
+.hero-title span { color: var(--accent); }
+.hero-slogan {
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin: 1rem 0 2rem;
+  max-width: 520px;
+}
+.hero-buttons { display: flex; flex-wrap: wrap; gap: .75rem; }
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+.hero-stat-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.4rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.hero-stat-label {
+  color: rgba(255, 255, 255, .6);
+  font-size: .78rem;
+  letter-spacing: 1px;
+}
+
+/* Logo besar di hero (kanan) */
+.hero-logo {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,.35));
+  animation: float-logo 4s ease-in-out infinite;
+}
+@keyframes float-logo {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+/* ============ POSTER ============ */
+#poster { background: var(--light); }
+.poster-box {
+  background: linear-gradient(135deg, var(--primary), var(--dark));
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.poster-box::after {
+  content: '🏸';
+  position: absolute;
+  right: 20px;
+  bottom: -10px;
+  font-size: 6rem;
+  opacity: .07;
+  pointer-events: none;
+}
+.poster-box h3 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+.poster-box p { color: rgba(255, 255, 255, .75); }
+.btn-daftar-hero {
+  background: var(--accent);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: .75rem 2rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+.btn-daftar-hero:hover {
+  background: var(--white);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ============ TENTANG ============ */
+.about-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: 0 4px 24px rgba(26, 58, 107, .1);
+  text-align: center;
+  transition: var(--transition);
+  border-bottom: 4px solid transparent;
+  height: 100%;
+}
+.about-card:hover {
+  transform: translateY(-6px);
+  border-bottom-color: var(--accent);
+}
+.about-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), #2a5298);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin: 0 auto 1rem;
+}
+.about-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* ============ VISI MISI ============ */
+#visimisi { background: var(--dark); }
+.vm-card {
+  border-radius: var(--radius);
+  padding: 2rem;
+  height: 100%;
+}
+.vm-card.visi {
+  background: rgba(232, 160, 32, .12);
+  border: 1px solid rgba(232, 160, 32, .3);
+}
+.vm-card.misi {
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .1);
+}
+.vm-label {
+  font-size: .7rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .6rem;
+}
+.vm-card h4 {
+  color: var(--white);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.vm-misi-item {
+  display: flex;
+  gap: .8rem;
+  align-items: flex-start;
+  color: rgba(255, 255, 255, .75);
+  font-size: .9rem;
+  margin-bottom: .8rem;
+}
+.vm-misi-item i { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+
+/* ============ JADWAL ============ */
+.schedule-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(26, 58, 107, .12);
+  height: 100%;
+  transition: var(--transition);
+}
+.schedule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px rgba(26, 58, 107, .2);
+}
+.schedule-header {
+  padding: 1.2rem 1.5rem;
+  color: var(--white);
+  font-weight: 700;
+}
+.schedule-header.pemula   { background: linear-gradient(135deg, #1A3A6B, #2a5298); }
+.schedule-header.beginner { background: linear-gradient(135deg, #E8A020, #c47f0a); color: var(--dark); }
+.schedule-header.senior   { background: linear-gradient(135deg, #0D1B34, #1A3A6B); }
+.badge-level {
+  font-size: .7rem;
+  letter-spacing: 2px;
+  background: rgba(255, 255, 255, .2);
+  border-radius: 4px;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: .3rem;
+}
+.schedule-body { background: var(--white); padding: 1.5rem; }
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem 0;
+  border-bottom: 1px dashed #e2e8f0;
+  font-size: .88rem;
+}
+.schedule-item:last-child { border-bottom: none; }
+.schedule-item .day { font-weight: 600; color: var(--primary); }
+.schedule-item .time { color: var(--gray); font-size: .8rem; }
+.schedule-footer {
+  background: var(--light);
+  padding: .8rem 1.5rem;
+  font-size: .8rem;
+  color: var(--gray);
+}
+.program-box {
+  background: linear-gradient(135deg, var(--primary), var(--dark));
+  border-radius: var(--radius);
+  padding: 2rem;
+  color: var(--white);
+}
+.program-box h5 {
+  color: var(--accent);
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 2px;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.program-item {
+  display: flex;
+  gap: .7rem;
+  align-items: flex-start;
+  margin-bottom: .8rem;
+  font-size: .9rem;
+  color: rgba(255, 255, 255, .8);
+}
+.program-item i { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+/* ============ PELATIH ============ */
+#pelatih { background: var(--light); }
+.coach-group-label {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.5rem;
+  color: var(--primary);
+  letter-spacing: 2px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 1rem;
+}
+.coach-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(26, 58, 107, .08);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.coach-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+.coach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(26, 58, 107, .15);
+}
+.coach-avatar {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), #2a5298);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--white);
+  font-family: 'Bebas Neue', cursive;
+  margin-bottom: 1rem;
+}
+.coach-card h6 { font-weight: 700; margin-bottom: 2px; }
+.coach-role {
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.coach-exp {
+  font-size: .82rem;
+  color: var(--gray);
+  margin-top: .4rem;
+}
+
+/* ============ GALERI ============ */
+#galeri { background: var(--dark); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (min-width: 768px) {
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  background: var(--primary);
+}
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+.gallery-item:hover .gallery-img { transform: scale(1.06); }
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(13,27,52,.9) 0%, transparent 100%);
+  padding: 2rem .8rem .7rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  transition: var(--transition);
+}
+.gallery-caption span { color: var(--accent); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 27, 52, .72);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  opacity: 0;
+  transition: var(--transition);
+}
+.gallery-overlay i { font-size: 2rem; color: var(--accent); }
+.gallery-overlay p { font-size: .85rem; margin-top: .4rem; font-weight: 600; }
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-item:hover .gallery-caption { opacity: 0; }
+
+/* ============ DAFTAR ============ */
+#daftar {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+}
+.daftar-box { text-align: center; padding: 3rem 1rem; }
+.daftar-icon {
+  width: 90px;
+  height: 90px;
+  background: rgba(232, 160, 32, .2);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5rem;
+}
+.daftar-box h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+.daftar-box p { color: rgba(255, 255, 255, .7); margin-bottom: 2rem; }
+.btn-daftar-big {
+  background: var(--accent);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: .85rem 3rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+.btn-daftar-big:hover {
+  background: var(--white);
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+}
+
+/* ============ KONTAK ============ */
+#kontak { background: var(--light); }
+.map-embed {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(26, 58, 107, .15);
+  height: 340px;
+}
+.map-embed iframe { width: 100%; height: 100%; border: 0; }
+.contact-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(26, 58, 107, .08);
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .9rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: inherit;
+  transition: var(--transition);
+}
+.contact-item:last-child { border-bottom: none; }
+.contact-item:hover { color: var(--primary); padding-left: 6px; }
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.ci-wa  { background: #dcfce7; color: #16a34a; }
+.ci-ig  { background: #fce7f3; color: #be185d; }
+.ci-tt  { background: #f0f9ff; color: #0369a1; }
+.ci-loc { background: #fef3c7; color: #d97706; }
+.contact-text small { color: var(--gray); font-size: .75rem; }
+.contact-text strong { display: block; font-size: .92rem; }
+
+/* ============ FOOTER ============ */
+#footer {
+  background: var(--dark);
+  padding: 2rem 0;
+  text-align: center;
+}
+.footer-brand {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.8rem;
+  color: var(--white);
+  letter-spacing: 3px;
+  margin-bottom: .3rem;
+}
+.footer-brand span { color: var(--accent); }
+#footer p { color: rgba(255, 255, 255, .4); font-size: .82rem; }
+
+/* ============ LIGHTBOX ============ */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .95);
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+#lightbox.active { display: flex; }
+#lightbox-content {
+  background: var(--dark);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+}
+.lb-photo-img {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+#lb-photo-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: .8rem;
+  margin-bottom: .2rem;
+}
+.lb-icon { font-size: 4rem; color: var(--accent); margin-bottom: 1rem; }
+#lightbox-close {
+  position: absolute;
+  top: 10px; right: 12px;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, .5);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: var(--transition);
+  z-index: 2;
+}
+#lightbox-close:hover { color: var(--white); }
